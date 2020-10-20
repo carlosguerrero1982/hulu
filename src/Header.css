@@ -2,11 +2,30 @@
 
     color: white;
     display: flex;
-    background-color: black;
+    
     align-items: center;
     padding: 20px;
     justify-content: space-between;
     overflow-x: scroll;
+    
+}
+
+.header ::-webkit-scrollbar{
+
+    display: none;
+
+}
+
+.header{
+
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+
+}
+
+.header_icon--active > p {
+
+    display: inline-flex !important;
 }
 
 .header > img {
@@ -51,6 +70,6 @@ display: none;
 }
 
 .header_icon:hover > p{
-display: inline;
+display: inline-flex;
 
 }
