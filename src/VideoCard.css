@@ -21,3 +21,13 @@ transition: transform 100ms;
 .videocard > h2 {
     padding-top: 10px;
 }
+
+.videocard_stats{
+
+    display: none ;
+}
+
+.videocard:hover > .videocard_stats {
+
+    display: inline;
+}

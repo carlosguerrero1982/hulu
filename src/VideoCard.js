@@ -1,7 +1,7 @@
 import React from 'react';
 import './VideoCard.css';
 import TextTruncate from 'react-text-truncate';
-
+import ThumbUpSharpIcon from '@material-ui/icons/ThumbUpSharp';
 
 function VideoCard({movie}) {
 
@@ -24,14 +24,24 @@ function VideoCard({movie}) {
             line={2}
             element="p"
             truncateText="…"
+            
             text={movie.overview}
-           
+            
         />
 
+        
+         <h2>{movie.original_title || movie.original_name}</h2>   
 
         
-         <h2>{movie.original_title}</h2>   
-         <p>Likes</p>
+
+         <p className="videocard_stats">
+             
+           {movie.media_type && `${movie.media_type} .`} 
+           {movie.release_date || movie.first_air_date}         
+
+         <ThumbUpSharpIcon /> {movie.vote_count}
+         
+         </p>
 
 
         </div>

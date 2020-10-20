@@ -2,10 +2,10 @@ import React,{useState,useEffect} from 'react';
 import './Results.css';
 import VideoCard from './VideoCard';
 import axios from './axios';
-import requests from './requests';
 
 
-function Results() {
+
+function Results({SelectedOption}) {
 
     const [movies, setMovies] = useState([]);
 
@@ -13,7 +13,7 @@ function Results() {
       
         async function fetchData(){
 
-            const request = await axios.get(requests.fetchActionMovies);
+            const request = await axios.get(SelectedOption);
             
             console.log(request);
 
@@ -25,7 +25,7 @@ function Results() {
 
             fetchData();
 
-    }, [])
+    }, [SelectedOption])
 
 
 
