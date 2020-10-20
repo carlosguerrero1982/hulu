@@ -2,14 +2,15 @@ import React from 'react';
 import './VideoCard.css';
 import TextTruncate from 'react-text-truncate';
 import ThumbUpSharpIcon from '@material-ui/icons/ThumbUpSharp';
+import { forwardRef } from 'react';
 
-function VideoCard({movie}) {
+const VideoCard = forwardRef(({movie}, ref) => {
 
     const base_url = "https://image.tmdb.org/t/p/original/";
 
 
     return (
-        <div className="videocard">
+        <div ref={ref} className="videocard">
 
         
 
@@ -46,6 +47,6 @@ function VideoCard({movie}) {
 
         </div>
     )
-}
+});
 
 export default VideoCard
